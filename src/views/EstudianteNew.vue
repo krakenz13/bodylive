@@ -120,6 +120,12 @@ export default {
 
 
                         </div>
+                    
+                        <div class=" input-group mb-3">
+                            <span class="input-group-text"><font-awesome-icon icon="fa-solid fa-dumbbell" /></span>
+                            <input type="text" v-model="created_at" id="created_at" placeholder="actualice la fecha"
+                                required maxlength="50" class="form-control">
+                        </div>
 
                         <div class=" input-group mb-3">
                             <span class="input-group-text"><font-awesome-icon icon="fa-solid fa-camera" /></span>

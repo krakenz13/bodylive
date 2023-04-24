@@ -30,9 +30,9 @@ import { RouterLink, RouterView } from 'vue-router'
               <li>
                 <RouterLink class="dropdown-item" to="/createE">Registro <del></del> Cliente</RouterLink>
               </li>
+           
               <li>
-                <RouterLink :to="{ path: '/aboutE' }" class="dropdown-item" aria-current="page"> cerrar
-                  sesion</RouterLink>
+                <RouterLink :to="{ path: '/fechaE' }" class="dropdown-item" aria-current="page"> menbresias vencidas</RouterLink>
 
               </li>
 
@@ -41,10 +41,28 @@ import { RouterLink, RouterView } from 'vue-router'
           </li>
 
         </ul>
+
         <div>
         </div>
       </div>
     </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-1 mb-lg-0 p-2 ">
+          <li class="nav-item ">
+            <RouterLink :to="{ path: '/registerE' }" class="nav-link active" aria-current="page"><font-awesome-icon icon="fa-solid fa-user" /></RouterLink>
+          </li>
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-1 mb-lg-0 p-2">
+        <li class="nav-item ">
+                <RouterLink :to="{ path: '/loginE' }" class="dropdown-item" aria-current="page"><font-awesome-icon :icon="['fas', 'arrow-right-from-bracket']" /></RouterLink>
+
+        </li>
+      </ul>
+    </div>
+
+
 
   </nav>
   <RouterView />
@@ -67,5 +85,6 @@ import { RouterLink, RouterView } from 'vue-router'
 
 
 }
+
 </style>
 

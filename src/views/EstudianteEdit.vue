@@ -7,13 +7,14 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            id: 0,
+            id: 1,
             nombre: '',
             apellido: '',
             foto: '',
             cedula: '',
             telefono: '',
             mentoria: '',
+            created_at:'',
             url: 'http://academicobackend.test/api/estudiantes',
             cargando: true
         }
@@ -30,6 +31,8 @@ export default {
         getEstudiante() {
             console.log(this.url)
             axios.get(this.url).then(
+                
+
                 res => {
                     this.nombre = res.data.data.nombre;
                     this.apellido = res.data.data.apellido;
@@ -37,6 +40,8 @@ export default {
                     this.cedula = res.data.data.cedula;
                     this.telefono = res.data.data.telefono;
                     this.mentoria = res.data.data.mentoria;
+                    this.created_at = res.data.data.created_at;
+
                     this.cargando = false;
                 }
             );
@@ -58,7 +63,9 @@ export default {
                     foto: this.foto.trim(),
                     cedula:this.cedula.trim(),
                     telefono:this.telefono.trim(),
-                    mentoria:this.mentoria.trim()
+                    mentoria:this.mentoria.trim(),
+                    created_at:this.created_at.trim(),
+                  
                 }
                 enviarSolicitud('PUT', parametros, this.url, 'Estudiante actualizado!!!');
 
@@ -149,6 +156,13 @@ export default {
                         <div class=" input-group mb-3">
                             <span class="input-group-text"><font-awesome-icon icon="fa-solid fa-dumbbell" /></span>
                             <input type="text" v-model="mentoria" id="mentoria" placeholder="ingrese tipo de mentoria"
+                                required maxlength="50" class="form-control">
+
+
+                        </div>
+                        <div class=" input-group mb-3">
+                            <span class="input-group-text"><font-awesome-icon icon="fa-solid fa-dumbbell" /></span>
+                            <input type="text" v-model="created_at" id="created_at" placeholder="actualice la fecha"
                                 required maxlength="50" class="form-control">
 
 
