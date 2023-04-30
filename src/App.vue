@@ -53,7 +53,7 @@ import { RouterLink, RouterView } from 'vue-router'
           </li>
         </ul>
     </div>
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse"  id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-1 mb-lg-0 p-2">
         <li class="nav-item ">
                 <RouterLink :to="{ path: '/loginE' }" class="dropdown-item" aria-current="page"><font-awesome-icon :icon="['fas', 'arrow-right-from-bracket']" /></RouterLink>

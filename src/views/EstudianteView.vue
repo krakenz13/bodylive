@@ -12,7 +12,7 @@ export default {
             nombre: '',
             apellido: '',
             foto: '',
-            url: 'http://academicobackend.test/api/estudiantes',
+            url: 'localhost/api/estudiantes/search',
             cargando: true
         }
     },

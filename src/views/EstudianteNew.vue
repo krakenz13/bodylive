@@ -12,7 +12,7 @@ export default {
             cedula:'',
             telefono: '',
             mentoria: '',
-            url:'http://academicobackend.test/api/estudiantes',
+            url:'http://localhost/api/estudiantes',
             cargando: false
         }
     },

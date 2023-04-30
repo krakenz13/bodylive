@@ -1,7 +1,7 @@
 <script>
 import axios from 'axios';
 import { confirmar } from '../funciones.js'
-export default {
+export default{
   data() {
     return {
       buscador: '',
@@ -15,7 +15,7 @@ export default {
   methods: {
     getEstudiantes() {
       this.cargando = true;
-      let url = this.buscador == '' ? 'http://academicobackend.test/api/estudiantes/search' : 'http://academicobackend.test/api/estudiantes/search/' + this.buscador
+      let url = this.buscador == '' ? 'http://localhost/api/estudiantes/search' : 'http://localhost/api/estudiantes/search/' + this.buscador
       axios.get(url).then(
         res => {
           this.estudiantes = res.data;
@@ -24,7 +24,7 @@ export default {
       );
     },
     eliminar(id, nombre) {
-      confirmar('http://academicobackend.test/api/estudiantes/', id, 'Eliminar resgistro', 'Realmente desea eliminar a' + nombre + '?');
+      confirmar('http://localhost/api/estudiantes/', id, 'Eliminar resgistro', 'Realmente desea eliminar a' + nombre + '?');
       this.cargando = false;
     }
   }
@@ -45,15 +45,11 @@ export default {
     <div class="col-lg-10 offset-lg-1 text-center">
 
       <div class="table-responsive">
-
-        <div class="d-grid col-4 mx-auto mb-1 p-3">
-          <input type="text" class="form-control " placeholder="Buscar al cliente" v-model="buscador" @input="buscar" />
-
-        </div>
-
-        <div class="input-gronp col-4 mx-auto mb-1 p-1">
-          <button class="btn btn-outline-secondary  " type="button" @click="getEstudiantes">Buscar</button>
-        </div>
+        <form class="d-flex col-8 mx-auto mb-1 p-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="buscar al cliente" v-model="buscador"
+            @input="buscar" aria-label="Search">
+          <button class="btn btn-outline-secondary" @click="getEstudiantes" type="button">Buscar</button>
+        </form>
         <table class="table table-bodered table-hover">
           <thead>
             <tr>
@@ -90,7 +86,7 @@ export default {
           </thead>
           <tbody class="table-group-divider" id="contenido">
             <tr v-if="this.cargando">
-              <td colspan="6">
+              <td colspan="10">
                 <h3>cargando...</h3>
               </td>
 

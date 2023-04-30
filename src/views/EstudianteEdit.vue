@@ -15,7 +15,7 @@ export default {
             telefono: '',
             mentoria: '',
             created_at:'',
-            url: 'http://academicobackend.test/api/estudiantes',
+            url: 'http://localhost/api/estudiantes',
             cargando: true
         }
     },
